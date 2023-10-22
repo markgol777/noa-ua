@@ -7,8 +7,6 @@ import { MainComponent } from './main/main.component';
 import { ProductsComponent } from './products/products.component';
 import { ProductInfoComponent } from './product-info/product-info.component';
 import { AuthGuard } from './shared/guards/auth.guard';
-import { CabinetComponent } from './cabinet/cabinet.component';
-import { BasketComponent } from './basket/basket.component';
 
 const routes: Routes = [
   {path: '', component: MainComponent},
@@ -17,8 +15,7 @@ const routes: Routes = [
   {path: 'product/:category', component: ProductsComponent},
   {path: 'delivery', component: DeliveryPageComponent},
   {path: 'products/:path', component: ProductInfoComponent},
-  {path: 'cabinet', component: CabinetComponent, canActivate: [AuthGuard]},
-  {path: 'basket', component: BasketComponent}
+  {path: 'cabinet', component: ProductInfoComponent, canActivate: [AuthGuard]}
 ];
 
 @NgModule({
